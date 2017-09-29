@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>See Dream</title>
+  <title>微信小程序选项卡Tab组件 | See Dream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="See Dream">
-<meta property="og:url" content="http://withwyf.github.io/index.html">
+  <meta name="description" content="小程序tab选项卡组件看了小程序里面的组件，发现没有选项卡，于是在github上搞个组件吧，同时这个工程中也会陆续添加其他的组件。其实主要就是tab中选中的样式通过 变量判断class, 领外data-index可以通过点击事件的currentTarget.dataSet拿到，其他的就是样式拉，发现div元素也可以用，hhhh~~~ 12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序选项卡Tab组件">
+<meta property="og:url" content="http://withwyf.github.io/2017/09/29/微信小程序选项卡Tab组件/index.html">
 <meta property="og:site_name" content="See Dream">
+<meta property="og:description" content="小程序tab选项卡组件看了小程序里面的组件，发现没有选项卡，于是在github上搞个组件吧，同时这个工程中也会陆续添加其他的组件。其实主要就是tab中选中的样式通过 变量判断class, 领外data-index可以通过点击事件的currentTarget.dataSet拿到，其他的就是样式拉，发现div元素也可以用，hhhh~~~ 12345678910111213141516171819202">
+<meta property="og:updated_time" content="2017-09-29T10:50:28.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="See Dream">
+<meta name="twitter:title" content="微信小程序选项卡Tab组件">
+<meta name="twitter:description" content="小程序tab选项卡组件看了小程序里面的组件，发现没有选项卡，于是在github上搞个组件吧，同时这个工程中也会陆续添加其他的组件。其实主要就是tab中选中的样式通过 变量判断class, 领外data-index可以通过点击事件的currentTarget.dataSet拿到，其他的就是样式拉，发现div元素也可以用，hhhh~~~ 12345678910111213141516171819202">
   
     <link rel="alternate" href="/atom.xml" title="See Dream" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-微信小程序选项卡Tab组件" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-微信小程序选项卡Tab组件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/29/微信小程序选项卡Tab组件/" class="article-date">
   <time datetime="2017-09-29T10:50:02.000Z" itemprop="datePublished">2017-09-29</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/微信小程序选项卡Tab组件/">微信小程序选项卡Tab组件</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序选项卡Tab组件
     </h1>
   
 
@@ -97,133 +99,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="requestanimate-HTML5中的 requestAnimationFrame" class="article article-type-requestanimate" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/08/HTML5中的 requestAnimationFrame/" class="article-date">
-  <time datetime="2017-09-08T10:15:38.000Z" itemprop="datePublished">2017-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/08/HTML5中的 requestAnimationFrame/">HTML5中的 requestAnimationFrame</a>
-    </h1>
+    <a href="/2017/09/08/HTML5中的 requestAnimationFrame/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML5中的 requestAnimationFrame</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HTML5中的-requestAnimationFrame"><a href="#HTML5中的-requestAnimationFrame" class="headerlink" title="HTML5中的 requestAnimationFrame"></a>HTML5中的 requestAnimationFrame</h1><p>在mdn中，是这么讲的：<br><em>window.requestAnimationFrame() 方法告诉浏览器您希望执行动画，并请求浏览器调用指定的函数在下一次重绘之前更新动画。该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。如果你想做逐帧动画的时候，你应该用这个方法。这就要求你的动画函数执行会先于浏览器重绘动作。通常来说，被调用的频率是每秒60次，但是一般会遵循W3C标准规定的频率。如果是后台标签页面，重绘频率则会大大降低。</em></p>
-<p>说了这么多，其实调用方法很简单，就是<br><code>window.requestAnimationFrame(callback);</code> </p>
-<p>传入一个回调函数就可以了<br>比如我们在下面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"block"</span> <span class="attr">class</span>=<span class="string">"block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">'block'</span>);</div><div class="line"> <span class="keyword">var</span> width = <span class="number">100</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">time</span>) </span>&#123;</div><div class="line">	width ++;</div><div class="line">	ele.style.width = width + <span class="string">'px'</span>;</div><div class="line">	ele.innerHTML = width;</div><div class="line">	<span class="keyword">if</span>(width &lt; <span class="number">1000</span>)&#123;</div><div class="line">	  requestAnimationFrame(animate)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"> requestAnimationFrame(animate);</div></pre></td></tr></table></figure>
-<p>对脚本中定义一个回调函数animate, 然后依次的增加with变量，然后在回调中继续调用，这样就能实现每个frame的刷新，现在回过头看，requestAnimationFrame， 字面意义，就是实现逐帧的动画嘛，但是和定时器不同的是，它会和浏览器重绘的频率保持一致，因此比定时器更加流畅~~~</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/09/08/HTML5中的 requestAnimationFrame/" data-id="cj85rpbeh00012s2jvcgpat37" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hexo-is-done" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/11/hexo-is-done/" class="article-date">
-  <time datetime="2017-08-11T10:08:52.000Z" itemprop="datePublished">2017-08-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/11/hexo-is-done/">hexo is done</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Well, Hexo is done, Wwwwwelcome!!!!!!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/08/11/hexo-is-done/" data-id="cj85rpbes00022s2jq6hnxo4p" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/07/hello-world/" class="article-date">
-  <time datetime="2017-08-07T08:01:22.444Z" itemprop="datePublished">2017-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/08/07/hello-world/" data-id="cj85rpbf000042s2jfui5ikiq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
