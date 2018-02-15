@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://withwyf.github.io"></form>
@@ -60,6 +60,86 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-在NodeJs中使用Socks代理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/在NodeJs中使用Socks代理/" class="article-date">
+  <time datetime="2018-02-15T08:31:35.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/15/在NodeJs中使用Socks代理/">&#39;在NodeJs中使用Socks代理&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="这篇主要是讲怎么在nodejs上使用用户身份设置以及socket代理"><a href="#这篇主要是讲怎么在nodejs上使用用户身份设置以及socket代理" class="headerlink" title="这篇主要是讲怎么在nodejs上使用用户身份设置以及socket代理"></a>这篇主要是讲怎么在nodejs上使用用户身份设置以及socket代理</h4><p>前些天突然搞了一个使用NodeJs调用Jenkins接口的服务，之前的代码都是用Java去写的，使用 <strong>Apache</strong> 的httpClient，不看不知道，一看吓一跳，可以设各种代理，以及用户验证的auth, 而这些在node上根本没见过，也不知道怎么搞，只能去查每个设置需要做什么，然后在node上实现；</p>
+<p>其实主要是两部分：</p>
+<ol>
+<li>nodejs中使用用户身份校验信息； 这个就是<code>http basic auth</code>，在 <strong>request</strong> 中主要是使用<strong>auth</strong>配置：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">request.get(<span class="string">'http://some.server.com/'</span>, &#123;</div><div class="line">  <span class="string">'auth'</span>: &#123;</div><div class="line">    <span class="string">'user'</span>: <span class="string">'username'</span>,</div><div class="line">    <span class="string">'pass'</span>: <span class="string">'password'</span>,</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li>使用socket代理；先安装 <code>socks5-http-client</code>,<br>然后配置<code>agentClass</code>为引入的Agent类型，配置agentOptions中的host和port：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Agent = <span class="built_in">require</span>(<span class="string">'socks5-http-client/lib/Agent'</span>);</div><div class="line"> </div><div class="line">request(&#123;</div><div class="line">    url: <span class="string">'http://en.wikipedia.org/wiki/SOCKS'</span>,</div><div class="line">    auth: &#123;</div><div class="line">      <span class="string">'user'</span>: <span class="string">'username'</span>,</div><div class="line">      <span class="string">'pass'</span>: <span class="string">'password'</span></div><div class="line">    &#125;</div><div class="line">    agentClass: Agent,</div><div class="line">    agentOptions: &#123;</div><div class="line">        socksHost: <span class="string">'your-sock-proxy-host'</span>, <span class="comment">// sock host</span></div><div class="line">        socksPort: <span class="number">9050</span> <span class="comment">// sock port. </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这部分也可以封装起来，直接封装成一个SocksRequest，里面默认加上agentClass，就不用每次都引用Agent了</p>
+<p>今天除夕，哈哈哈哈<br>妥妥的~ </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://withwyf.github.io/2018/02/15/在NodeJs中使用Socks代理/" data-id="cjdo9mt780005so2je12cukc4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-draft" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/22/draft/" class="article-date">
+  <time datetime="2017-11-22T03:23:16.003Z" itemprop="datePublished">2017-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code><br>    看看new 做了啥<br>    function Person( name, age ) {<br>    //var obj = object.create(Person.prototype);<br>    //this = obj;</code></p>
+<pre><code>this.name = name;
+this.age = age;
+
+//return thisl
+</code></pre><p>}<br></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://withwyf.github.io/2017/11/22/draft/" data-id="cjdo9mt740004so2jsze3np3f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-微信小程序选项卡Tab组件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -91,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/09/29/微信小程序选项卡Tab组件/" data-id="cj85rsnc30004yc2j3mlf5nhb" class="article-share-link">Share</a>
+      <a data-url="http://withwyf.github.io/2017/09/29/微信小程序选项卡Tab组件/" data-id="cjdo9mt7p0006so2jv8k0vw0w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/09/08/HTML5中的 requestAnimationFrame/" data-id="cj85rsnbj0001yc2jfsfadvn9" class="article-share-link">Share</a>
+      <a data-url="http://withwyf.github.io/2017/09/08/HTML5中的 requestAnimationFrame/" data-id="cjdo9mt6i0001so2j9if0vw3t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -169,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/08/11/hexo-is-done/" data-id="cj85rsnc00003yc2j35xpx2vo" class="article-share-link">Share</a>
+      <a data-url="http://withwyf.github.io/2017/08/11/hexo-is-done/" data-id="cjdo9mt710003so2j0e4i7aaz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://withwyf.github.io/2017/08/07/hello-world/" data-id="cj85rsnbw0002yc2j448x2kc2" class="article-share-link">Share</a>
+      <a data-url="http://withwyf.github.io/2017/08/07/hello-world/" data-id="cjdo9mt6x0002so2jlsd7f37h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,9 +319,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">彙整</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
     </div>
   </div>
 
@@ -249,9 +329,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/02/15/在NodeJs中使用Socks代理/">&#39;在NodeJs中使用Socks代理&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/22/draft/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/09/29/微信小程序选项卡Tab组件/">微信小程序选项卡Tab组件</a>
@@ -263,10 +351,6 @@
         
           <li>
             <a href="/2017/08/11/hexo-is-done/">hexo is done</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/07/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -281,7 +365,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 withwyf<br>
+      &copy; 2018 withwyf<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
